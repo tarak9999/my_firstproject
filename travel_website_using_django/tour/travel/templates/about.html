@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{%block content %}
+<html lang="en">
+<title>Travel India</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+<body>
+
+<!-- The about Section -->
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="about_us">
+    <h2 class="w3-wide">ABOUT US</h2>
+    <p class="w3-opacity"><i>Best car rental company in town</i></p>
+    <p class="w3-justify">We Provide the best cabs on rent to travel all over the India. We have new and clean cabs with trained driver. We will make your trip perfect and memorable.</p>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-third">
+        <p>JHARKHAND</p>
+        <img src="/static/image/jharkhand_image.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%"height="150">
+      </div>
+      <div class="w3-third">
+        <p>RAJASTHAN</p>
+        <img src="/static/image/rajasthan_tour.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%" height="150">
+      </div>
+      <div class="w3-third">
+        <p>KERALA</p>
+        <img src="/static/image/kerala.jpg" class="w3-round" alt="Random Name" style="width:60%" height="150">
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+{% endblock %}

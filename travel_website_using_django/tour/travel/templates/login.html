@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/style1.css">
+    <style>
+        .btn-outline-info {
+            background-color: #007BFF;
+            color: #fff;
+            border: 2px solid #007BFF;
+        }
+        .btn-outline-info:hover {
+            background-color: #0056b3;
+            border: 2px solid #0056b3;
+        }
+        .form-field {
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .border-bottom {
+            border-bottom: 2px solid #007BFF;
+            color: black; /* Make the text color darker */
+            text-align: center; /* Center-align text */
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .content-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+            margin-top: 50px;
+        }    
+    </style>
+</head>
+<body>
+{% extends "base.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Log In</legend>
+                <div class="form-field">
+                    <label for="username">Username:</label>
+                    {{ form.username}}
+                </div>
+                <div class="form-field">
+                    <label for="password1">Password:</label>
+                    {{ form.password }}
+                </div>     
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Login</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Need An Account? <a class="ml-2" href="../register">Sign Up Now</a>
+            </small>
+        </div>
+    </div>
+{% endblock content %}
+</body>
+</html>

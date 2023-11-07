@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings</title>
+    <style>
+        /* Inline CSS for basic styling */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        
+        .booking-item {
+            background-color: white;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .booking-details {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Bookings</h1>
+        
+        {% if mybook %}
+            {% for booking in mybook %}
+                <div class="booking-item">
+                    <p class="booking-details">Name: {{ booking.user.username }}</p>
+                    <p class="booking-details">Mobile Number: {{ booking.mobilenumber }}</p>
+                    <p class="booking-details">No. of Days: {{ booking.no_of_days }}</p>
+                    <p class="booking-details">Name of vehicle: {{ booking.name_of_car }}</p>
+                    <p class="booking-details">Date of Booking: {{ booking.date_of_booking }}</p>
+                    <p class="booking-details">Status: {{ booking.status }}</p>
+                    <!-- Add more details as needed -->
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No bookings found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

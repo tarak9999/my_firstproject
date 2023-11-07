@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        /* Reset some default browser styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: url('your-transparent-image.png') center center fixed; /* Background image */
+            background-size: cover; /* Cover the entire viewport */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 70%; /* Slightly larger width, covering 70% of the viewport */
+            max-width: 600px; /* Maximum width of 600px */
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Background with transparency */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #007bff;
+            text-align: center; /* Center the heading */
+            margin-bottom: 20px; /* Add spacing below the heading */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 20px; /* Add spacing between each input box */
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+            text-align: left; /* Align labels to the left */
+        }
+
+        input[type="text"], input[type="number"], select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button.submit-button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px; /* Slightly larger width */
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 0 auto;
+        }
+
+        button.submit-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Style the button text color to be more distinct */
+        button.submit-button {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Payment Page</h1>
+
+        <form method="post" action='.'>
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="cardNumber">Card Number:</label>
+                {{form.card_number}}
+            </div>
+            <div class="form-group">
+                <label for="expirationDate">Expiration Date:</label>
+                {{form.expiration_date}}
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV:</label>
+                {{form.cvv}}
+            </div>
+            <div class="form-group">
+                <label for="nameOnCard">Name on Card:</label>
+                {{form.name_on_card}}
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount to Pay: {{total}}</label>
+            </div>
+            <button class="submit-button" type="submit">PAY NOW</button>
+        </form>
+    </div>
+</body>
+</html>
